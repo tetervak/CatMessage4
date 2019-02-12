@@ -17,6 +17,11 @@
 
     <!-- button labels -->
     <string name="send">Send</string>
+
+    <!-- the floating label -->
     <string name="sheridan">Sheridan, 2019</string>
+    <string name="static_fragments">Static Fragments</string>
+    <string name="input_fragment">Input Fragment</string>
+    <string name="output_fragment_label">Output Fragment</string>
 
 </resources>

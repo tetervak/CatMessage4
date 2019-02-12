@@ -6,27 +6,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    android:orientation="horizontal"
+    android:background="@color/Green100"
+
+    android:orientation="vertical"
 
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main"
     android:baselineAligned="false">
 
-    <fragment
-        android:id="@+id/fragment_input"
-        android:name="ca.javateacher.catmessage4.InputFragment"
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        tools:layout="@layout/fragment_input" />
+    <TextView
+        android:id="@+id/static_fragments_lebel"
+        android:text="@string/static_fragments"
+        style="@style/static_fragments_label" />
 
-    <fragment
-        android:id="@+id/fragment_output"
-        android:name="ca.javateacher.catmessage4.OutputFragment"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        tools:layout="@layout/fragment_output" />
+        android:orientation="horizontal"
+        android:baselineAligned="false">
 
+        <fragment
+            android:id="@+id/fragment_input"
+            android:name="ca.javateacher.catmessage4.InputFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_input" />
+
+        <fragment
+            android:id="@+id/fragment_output"
+            android:name="ca.javateacher.catmessage4.OutputFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            tools:layout="@layout/fragment_output" />
+
+    </LinearLayout>
 </LinearLayout>
