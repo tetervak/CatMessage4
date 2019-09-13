@@ -68,13 +68,13 @@ public class InputFragment extends Fragment {
 
 
   @Override
-  public void onAttach(Context context) {
+  public void onAttach(@NonNull Context context) {
     super.onAttach(context);
-    try {
+    if(context instanceof InputListener){
       mInputListener = (InputListener) context;
-    } catch (ClassCastException e) {
-      throw new ClassCastException(context.toString()
-          + " must implement InputListener");
+    }else{
+      throw new RuntimeException(context.toString()
+              + " must implement InputFragment.InputListener");
     }
   }
 
