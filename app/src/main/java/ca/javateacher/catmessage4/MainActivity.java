@@ -9,8 +9,9 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
     implements InputFragment.InputListener{
 
-  private static final String ABOUT_FRAGMENT = "aboutFragment";
+  private static final String ABOUT_FRAGMENT_TAG = "aboutFragment";
 
+  // it is the layout fragment
   private OutputFragment mOutputFragment;
 
   @Override
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
+    // lookup the layout fragment
     mOutputFragment = (OutputFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.fragment_output);
     assert mOutputFragment != null;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity
   public boolean onOptionsItemSelected(MenuItem item) {
     if (item.getItemId() == R.id.about) {
       AboutFragment aboutFragment = AboutFragment.newInstance();
-      aboutFragment.show(getSupportFragmentManager(), ABOUT_FRAGMENT);
+      aboutFragment.show(getSupportFragmentManager(), ABOUT_FRAGMENT_TAG);
       return true;
     }
     return super.onOptionsItemSelected(item);
