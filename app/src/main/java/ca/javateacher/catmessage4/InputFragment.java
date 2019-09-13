@@ -35,12 +35,7 @@ public class InputFragment extends Fragment {
     mMessageGroup = view.findViewById(R.id.message_group);
 
     Button sendButton = view.findViewById(R.id.send_button);
-    sendButton.setOnClickListener(new View.OnClickListener() {
-      @Override
-      public void onClick(View v) {
-        showOutput();
-      }
-    });
+    sendButton.setOnClickListener(v -> showOutput());
 
     return view;
   }
