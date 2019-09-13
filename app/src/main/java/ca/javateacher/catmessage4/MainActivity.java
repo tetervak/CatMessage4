@@ -11,12 +11,18 @@ public class MainActivity extends AppCompatActivity
 
   private static final String ABOUT_FRAGMENT = "aboutFragment";
 
+  private OutputFragment mOutputFragment;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
     Toolbar toolbar = findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
+
+    mOutputFragment = (OutputFragment) getSupportFragmentManager()
+                    .findFragmentById(R.id.fragment_output);
+    assert mOutputFragment != null;
   }
 
   @Override
@@ -38,10 +44,6 @@ public class MainActivity extends AppCompatActivity
 
   @Override
   public void updateMessage(String text) {
-    OutputFragment outputFragment =
-        (OutputFragment) getSupportFragmentManager()
-            .findFragmentById(R.id.fragment_output);
-    if(outputFragment != null)
-      outputFragment.updateMessage(text);
+      mOutputFragment.updateMessage(text);
   }
 }

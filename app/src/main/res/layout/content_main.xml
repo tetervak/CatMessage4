@@ -15,7 +15,7 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
-        android:id="@+id/static_fragments_lebel"
+        android:id="@+id/static_fragments_label"
         android:text="@string/static_fragments"
         style="@style/static_fragments_label" />
 
